@@ -5,9 +5,6 @@ from calculation import calc
 class library:
     opt, ca = option(), calc()
 
-    def __init__(self):
-        self.colorLoop()
-    
     def move(self, nextPos: list):
         self.ca.calcDeg(nextPos)
         self.opt.body.turn(-self.ca.nextDeg)
@@ -17,18 +14,10 @@ class library:
         self.ca.inDeg(deg)
         self.opt.body.turn(-self.ca.nextDeg)
 
-    def back(self, dis: int):
+    def direct(self, dis: int):
         self.ca.inDis(dis)
-        self.opt.body.straight(-self.ca.distance)
-    
-    def colorLoop(self):
-        while 1:
-            self.move(self.opt.containerPos[0])
-            self.rotate(0)
-            colorVal = self.opt.cSe.color()
-            if colorVal in self.opt.harborPos:
-                harbor = self.opt.harborPos[colorVal]
-                factory = self.opt.factoryPos[colorVal]
-            else:
-                self.opt.containerPos.popleft()
-                continue
+        self.opt.body.straight(self.ca.distance)
+
+    def arm(self, deg: int):
+        self.opt.mMo.run_target(500, deg)
+        self.opt.mMo.hold()

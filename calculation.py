@@ -1,7 +1,9 @@
 import math
+from options import option
 
 class calc:
-    currentPos, nextDeg, currentDeg, distance = [0, 0], 0, 0, 0
+    opt = option()
+    currentPos, nextDeg, currentDeg, distance = opt.startPos, 0, 0, 0
 
     def calcDeg(self, nextPos: list):
         run, rise = nextPos[0]-self.currentPos[0], nextPos[1]-self.currentPos[1]
@@ -31,7 +33,10 @@ class calc:
 
     def inDis(self, dis: int):
         divideDis = [dis*math.cos(self.currentDeg), dis*math.sin(self.currentDeg)]
-        run, rise = self.currentPos[0]-divideDis[0], self.currentPos[1]-divideDis[1]
+        run, rise = self.currentPos[0]+divideDis[0], self.currentPos[1]+divideDis[1]
         self.currentPos = [run, rise]
 
         self.distance = (run**2 + rise**2)**0.5
+
+    def adjustDeg(self) -> int:
+        return 90 * self.currentDeg/abs(self.currentDeg)

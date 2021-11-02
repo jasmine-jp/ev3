@@ -17,5 +17,6 @@ class option:
     centerPos = [0, 0]
 
     containerPos = deque([[], [], [], []])
+    nextHarborPos, nextFactoryPos = [], []
     harborPos = {Color.YELLOW: [], Color.RED: [], Color.GREEN: [], Color.BLUE: []}
     factoryPos = {Color.YELLOW: [], Color.RED: [], Color.GREEN: [], Color.BLUE: []}
