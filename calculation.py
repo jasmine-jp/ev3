@@ -32,11 +32,8 @@ class calc:
         self.currentDeg = slope
 
     def inDis(self, dis: int):
-        divideDis = [dis*math.cos(self.currentDeg), dis*math.sin(self.currentDeg)]
+        divideDis = [dis*math.cos(math.radians(self.currentDeg)), dis*math.sin(math.radians(self.currentDeg))]
         run, rise = self.currentPos[0]+divideDis[0], self.currentPos[1]+divideDis[1]
         self.currentPos = [run, rise]
 
-        self.distance = (run**2 + rise**2)**0.5
-
-    def adjustDeg(self) -> int:
-        return 90 * self.currentDeg/abs(self.currentDeg)
+        self.distance = dis
