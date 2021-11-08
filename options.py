@@ -12,10 +12,9 @@ class option:
     body.settings(300, None, 150, None)
 
     startPos = [-1050, 0]
-    startPos = [0, 0]
     centerPos = [0, 0]
 
-    containerPos = [[250, 65], [-170, -(+10)], [-250, -65], [170, -(-10)]]
+    containerPos = [[250, 110], [-170, 30], [-250, -110], [170, -30]]
     nextHarborPos, nextFactoryPos = [250, 0], [-250, 0]
     harborPos = {Color.YELLOW: [630, 270], Color.RED: [630, 90], Color.GREEN: [630, -90], Color.BLUE: [630, -270]}
-    factoryPos = {Color.YELLOW: [-520, -40], Color.RED: [-520, 40], Color.GREEN: [-850, 40], Color.BLUE: [-850, -40]}
+    factoryPos = {Color.YELLOW: [-520, -80], Color.RED: [-520, 80], Color.GREEN: [-850, 80], Color.BLUE: [-850, -80]}

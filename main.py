@@ -1,6 +1,5 @@
 #!/usr/bin/env pybricks-micropython
 from libraries import library
-from pybricks.tools import wait
 
 class main:
     lib = library()
@@ -12,15 +11,14 @@ class main:
                 break
             self.lib.move(self.lib.ca.opt.centerPos)
             self.lib.move(self.lib.ca.opt.containerPos[0])
-            self.lib.rotate(self.lib.adjustDeg())
+            self.lib.rotate(self.lib.ca.adjustDeg())
             self.lib.direct(100)
-            wait(1000)
             colorVal = self.lib.ca.opt.cSe.color()
             if colorVal in self.lib.ca.opt.factoryPos:
                 factory, harbor = self.lib.ca.opt.factoryPos[colorVal], self.lib.ca.opt.harborPos[colorVal]
                 self.lib.move(self.lib.ca.opt.nextFactoryPos)
                 self.lib.move(factory)
-                self.lib.rotate(self.lib.adjustDeg())
+                self.lib.rotate(self.lib.ca.adjustDeg())
                 self.lib.arm(0)
                 self.lib.direct(150)
                 self.lib.arm(-270)
@@ -30,9 +28,9 @@ class main:
                 self.lib.move(self.lib.ca.opt.nextHarborPos)
                 self.lib.move(harbor)
                 self.lib.rotate(0)
-                self.lib.direct(210)
+                self.lib.direct(250)
                 self.lib.arm(0)
-                self.lib.direct(-210)
+                self.lib.direct(-250)
                 self.lib.arm(-270)
                 self.lib.move(self.lib.ca.opt.nextHarborPos)
             else:
@@ -40,6 +38,7 @@ class main:
                 continue
         self.lib.move(self.lib.ca.opt.startPos)
         self.lib.rotate(0)
+        self.lib.arm(0)
 
 if __name__ == '__main__':
     main()
