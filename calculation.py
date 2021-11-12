@@ -37,9 +37,3 @@ class calc:
         self.currentPos = [run, rise]
 
         self.distance = dis
-
-    def adjustDeg(self) -> int:
-        return 90 * self.currentDeg/abs(self.currentDeg)
-
-    def diffDeg(self) -> float:
-        return self.distance * math.radians(self.nextDeg-int(self.nextDeg))
