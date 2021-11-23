@@ -1,11 +1,10 @@
 from pybricks.ev3devices import Motor, ColorSensor
-from pybricks.parameters import Port, Color, Direction
+from pybricks.parameters import Port, Color
 from pybricks.robotics import DriveBase
 
 class option:
-    d = Direction.COUNTERCLOCKWISE
-    mMo, lMo, rMo = Motor(Port.A, d), Motor(Port.B, d), Motor(Port.C, d)
-    cSe = ColorSensor(Port.S1)
+    mMo, lMo, rMo = Motor(Port.A), Motor(Port.B), Motor(Port.C)
+    cSe= ColorSensor(Port.S1)
 
     diamater = 56
     track = 125
@@ -15,6 +14,6 @@ class option:
     startPos = [-1125, 0]
     centerPos = [0, 0]
 
-    containerPos = [[270, 170], [-190, 130], [-270, -170], [190, -130]]
-    harborPos = {Color.YELLOW: [590, 290], Color.RED: [590, 100], Color.GREEN: [590, -100], Color.BLUE: [590, -290]}
+    containerPos = [[270, 200], [-190, 150], [190, -150], [-270, -200]]
+    harborPos = {Color.YELLOW: [590, 290], Color.RED: [590, 95], Color.GREEN: [590, -95], Color.BLUE: [590, -290]}
     factoryPos = {Color.YELLOW: [-530, -100], Color.RED: [-530, 100], Color.GREEN: [-850, 100], Color.BLUE: [-850, -100]}
